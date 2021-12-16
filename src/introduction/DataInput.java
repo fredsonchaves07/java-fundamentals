@@ -1,8 +1,8 @@
-package entradaDados;
+package introduction;
 
 import java.util.Scanner;
 
-public class Main {
+public class DataInput {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
