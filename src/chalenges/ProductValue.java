@@ -19,5 +19,7 @@ public class ProductValue {
         double total = (valueProduct1 * numberProduct1) + (valueProduct2 * numberProduct2);
 
         System.out.printf("Valor a pagar: R$%.2f%n", total);
+
+        scanner.close();
     }
 }
