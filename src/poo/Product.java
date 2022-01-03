@@ -39,6 +39,12 @@ public class Product {
 
         System.out.println(product);
 
+        System.out.print("Enter the number of products to be added in stock: ");
+        int quantity = scanner.nextInt();
+        product.addProduct(quantity);
+        
+        System.out.println(product);        
+
         scanner.close();
     }
 }
