@@ -20,19 +20,24 @@ public class Product {
         this.quantity -= quantity;
     }
 
+    @Override
+    public String toString(){
+        return "Product: " + this.name + " price R$ " + this.price + " quantity " + this.quantity;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Product product = new Product();
 
         System.out.println("Enter product data");
-        System.out.println("Name: ");
+        System.out.print("Name: ");
         product.name = scanner.nextLine();
-        System.out.println("Price: ");
+        System.out.print("Price: ");
         product.price = scanner.nextDouble();
-        System.out.println("Quantity in stock: ");
+        System.out.print("Quantity in stock: ");
         product.quantity = scanner.nextInt();
 
-        System.out.println("Product: " + product.name + " price R$ " + product.price + " quantity " + product.quantity);
+        System.out.println(product);
 
         scanner.close();
     }
