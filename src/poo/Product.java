@@ -8,6 +8,11 @@ public class Product {
     public double price;
     public int quantity;
 
+    /* Construtor padrão */
+    public Product(){
+
+    }
+
     public double totalValueInStock(){
         return this.price * this.quantity;
     }
