@@ -2,7 +2,7 @@ package poo.udemyBank;
 
 public class Account {
     
-    private int accountNumber;
+    protected int accountNumber;
     private String accountHolder;
     private double value;
 
