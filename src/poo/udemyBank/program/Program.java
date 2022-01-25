@@ -54,5 +54,10 @@ public class Program {
 
         /* DownCasting */
         BusinessAccount acc4 = (BusinessAccount) acc2;
+        /* Solução de problemas DownCasting*/
+        if (acc4 instanceof BusinessAccount) {
+            acc4 = (BusinessAccount) acc2;
+            acc4.loan(200.0);
+        }
     }
 }
