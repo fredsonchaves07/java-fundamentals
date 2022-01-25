@@ -1,10 +1,10 @@
-package poo.udemyBank;
+package poo.udemyBank.entities;
 
 public class Account {
-    
-    protected int accountNumber;
+
+    private int accountNumber;
     private String accountHolder;
-    private double value;
+    protected double value;
 
     public Account(int accountNumber, String accountHolder, double value) {
         this.accountNumber = accountNumber;

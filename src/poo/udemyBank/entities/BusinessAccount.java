@@ -1,4 +1,4 @@
-package poo.udemyBank;
+package poo.udemyBank.entities;
 
 public class BusinessAccount extends Account {
 
@@ -23,6 +23,6 @@ public class BusinessAccount extends Account {
     }
 
     public void loan(Double amount) {
-        if (amount <= loanLimit) accountNumber += amount - 10;
+        if (amount <= loanLimit) value += amount - 10;
     }
 }
