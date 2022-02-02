@@ -1,6 +1,6 @@
 package poo.udemyBank.entities;
 
-public class SavingsAccount extends Account {
+public final class SavingsAccount extends Account {
 
     private Double interestRate;
 
