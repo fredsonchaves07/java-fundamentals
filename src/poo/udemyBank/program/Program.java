@@ -45,7 +45,8 @@ public class Program {
 //        scanner.close();
 
         /* Upcasting */
-        Account acc = new Account(1001, "Alex", 0);
+        /* Funciona sem o abstract class */
+        Account acc = new BusinessAccount(1001, "Alex", 0.0);
         BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0, 500.0);
         Account acc1 = bacc;
         Account acc2 = new BusinessAccount(1003, "Bob", 0, 200.0);

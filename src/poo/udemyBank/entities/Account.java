@@ -1,6 +1,6 @@
 package poo.udemyBank.entities;
 
-public class Account {
+public abstract class Account {
 
     private int accountNumber;
     private String accountHolder;
