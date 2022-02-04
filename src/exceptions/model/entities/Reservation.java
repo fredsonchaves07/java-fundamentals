@@ -1,5 +1,7 @@
 package exceptions.model.entities;
 
+import exceptions.model.exceptions.ReservationException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -12,6 +14,9 @@ public class Reservation {
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public Reservation(Integer roomNumber, Date checkin, Date checkout) {
+        if (checkout.after(checkin)) {
+            throw new ReservationException("Error in reservation: reservation for update must be future dates");
+        }
         this.roomNumber = roomNumber;
         this.checkin = checkin;
         this.checkout = checkout;
@@ -38,17 +43,16 @@ public class Reservation {
         return TimeUnit.DAYS.convert(difDuration, TimeUnit.MICROSECONDS);
     }
 
-    public String updateDate(Date checkin, Date checkout) {
+    public void updateDate(Date checkin, Date checkout) {
         Date now = new Date();
         if (checkin.before(now) || checkout.before(now)) {
-            return "Error in reservation: reservation for update must be future dates";
+            throw new ReservationException("Error in reservation: reservation for update must be future dates");
         }
         if (!checkout.after(checkin)){
-            return "Error in reservation: check-out date must be afeter check-in";
+            throw new ReservationException("Error in reservation: check-out date must be afeter check-in");
         }
         this.checkin = checkin;
         this.checkout = checkout;
-        return null;
     }
 
     @Override
