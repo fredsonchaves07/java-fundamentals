@@ -1,8 +1,8 @@
-## Introdução à Orientação a Objetos
+# Introdução à Orientação a Objetos
 - É um modelo de análise, projeto e programação de software baseado na composição e interação entre diversas unidades chamadas de 'objetos'
 - Consiste em principios como abstração e representação do mundo real para o computacional
 
-### Classe e Objeto
+## Classe e Objeto
 - Uma classe é uma forma de definir um tipo de dados (Escopo)
 - Abstração de como será definido um conceito (Forma)
 - Formada por dados e comportamentos (Atributos, características e ações)
@@ -28,7 +28,7 @@
 }
 ``` 
 
-### Construtores
+## Construtores
 - Inicializa os valores dos atributos do objeto
 - Responsável pela construção do objeto
 - Realiza a construção de um objeto vazio (sem valores). Exemplo utilizando um construtor padrão
