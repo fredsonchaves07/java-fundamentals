@@ -52,3 +52,32 @@
     Aluno alunoMaria = new Aluno("Maria", 22, "10/01/2002", "0210214", "0145503");
 ```
 - A palavra `this` chama o atributo (O que diferencia a variavel da classe com o parâmetro do construtor)
+
+## Declarações públicas e privadas
+- Um dos princípios da orientação objetos é o **encapsulamento** que consiste em deixar os atibutos de forma privada evitando acessos desnecessários em classes que utilizam
+- A palavra reservada `private` deixa os atributos privados. Por padrão, quando não incluimos, por padrão o java considera como privado
+- Para deixar os atributos publicos precisamos atribuir o `public` nos atributos
+- Para obter e atribuir os valores, podemos usar os métodos `get` e `set` (Boa práticar usar esses métodos)
+```java
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+   }
+```
+
+## Métodos e ações
+- Os métodos são utilizados para definir as ações dos objetos
+- Executam a lógica do objeto
+- Exemplo de utilizaçao de um método que realiza o cálculo da média de um aluno
+```java
+    public double calculaMedia() {
+        return (nota1 + nota2) / 2;
+    }
+```
+- A chamada do método
+```java
+   aluno1.calculaMedia();
+```
