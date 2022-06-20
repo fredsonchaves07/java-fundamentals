@@ -81,3 +81,13 @@
 ```java
    aluno1.calculaMedia();
 ```
+
+## Método `toString()`
+- Representação da informação do objeto
+- Por padrão, o java retorna o endereço de memória onde o objeto está armazenado
+- Podemos criar retornos customizados. Basta chamar o método colocando o `@Override` para sobscrever o método
+- A chamada deste método é realizado pelo `toString()`
+
+## Método `equals()` e `hashCode()`
+- São utilizados para diferenciar e comparar objetos
+- 
