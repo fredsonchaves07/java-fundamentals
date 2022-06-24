@@ -6,5 +6,5 @@ Repositório que contém as notas de estudo e código desenvolvido durante os cu
 - [x] Java 17
 
 ## Índice
-- [Introdução ao Java](https://github.com/fredsonchaves07/java-fundamentals/blob/main/introducao_java.md)
-- [Introdução a Orientação Objetos](https://github.com/fredsonchaves07/java-fundamentals/blob/main/src/jdev/introducaoOrientacaoObjetos/orientacao_objetos.md)
+- [Introdução ao Java](https://github.com/fredsonchaves07/java-fundamentals/blob/main/study-notes/introducao_java.md)
+- [Introdução a Orientação Objetos](https://github.com/fredsonchaves07/java-fundamentals/blob/main/study-notes/orientacao_objetos.md)
