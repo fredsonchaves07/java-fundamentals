@@ -12,11 +12,12 @@ public class Carro {
     double precoCompra;
     Pessoa proprietario;
 
-    void calcularValorRevenda() {
+    double calcularValorRevenda() {
         int tempoDeUsoEmAnos = LocalDateTime.now().getYear() - anoFabricacao;
         double valorRevenda = (precoCompra / VIDA_UTIL_ANOS) * (20 - tempoDeUsoEmAnos);
         if (valorRevenda < 0) valorRevenda = 0;
         System.out.println("Tempo de uso (anos): " + tempoDeUsoEmAnos);
         System.out.println("Valor de revenda: " + valorRevenda);
+        return valorRevenda;
     }
 }
