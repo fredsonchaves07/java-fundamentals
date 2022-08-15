@@ -50,3 +50,16 @@ public class Aluno extends Pessoa {
 - Herda os atributos e métodos
 - Na classe específica, usamos no construtor o `super` ao invés do `this` para dizer que estamos chamando o construtor de `Pessoa`
 - Para sobscrever os métodos usamos a anotação `@Override`
+
+## Classes abstratas
+
+- Usamos a palavra reservada `abstract` para impedir que ela possa ser instanciada
+- Representa um conceito e não uma especificação. Usada com o propósito de reaproveitamento de código por meio da herança
+- No exemplo a classe `Pessoa` não pode ser instanciada
+- Semelhante a ideia de interfaces porém, podemos utilizar os atributos
+
+```java
+public abstract class Pessoa {
+    
+}
+```
