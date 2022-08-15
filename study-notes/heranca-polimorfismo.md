@@ -7,3 +7,46 @@
 - É possível criar uma hierarquia (Classe genérica e específica)
 - Uma subclasse herda métodos e atributos de sua superclasse
 -![Captura de tela de 2022-08-15 10-03-11](https://user-images.githubusercontent.com/43495376/184640035-07aa9a0d-54db-4b59-be0c-94190167fbcd.png)
+- Exemplo da superclasse
+
+```java
+public class Pessoa {
+
+    protected String nome;
+    protected int idade;
+    protected String dataNascimento;
+    protected String registroGeral;
+    protected String numeroCPF;
+    protected Pessoa pai;
+    protected Pessoa mae;
+
+    public Pessoa(String nome, int idade, String dataNascimento, String registroGeral, String numeroCPF, Pessoa pai, Pessoa mae) {
+        this.nome = nome;
+        this.idade = idade;
+        this.dataNascimento = dataNascimento;
+        this.registroGeral = registroGeral;
+        this.numeroCPF = numeroCPF;
+        this.pai = pai;
+        this.mae = mae;
+    }
+}
+```
+
+- Exemplo da classe que está herdando de `Pessoa`
+
+```java
+public class Aluno extends Pessoa {
+
+    private double nota1;
+
+    private double nota2;
+
+    public Aluno(String nome, int idade, String dataNascimento, String registroGeral, String numeroCPF, Pessoa pai, Pessoa mae) {
+        super(nome, idade, dataNascimento, registroGeral, numeroCPF, pai, mae);
+    }
+}
+```
+
+- Herda os atributos e métodos
+- Na classe específica, usamos no construtor o `super` ao invés do `this` para dizer que estamos chamando o construtor de `Pessoa`
+- Para sobscrever os métodos usamos a anotação `@Override`
