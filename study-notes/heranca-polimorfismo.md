@@ -63,3 +63,85 @@ public abstract class Pessoa {
     
 }
 ```
+
+## Métodos abstratos
+
+- São os métodos definidos em uma classe abstrata onde não possui implementação
+- A implementação do método deve ser realizada na classe filha
+- Reaproveitamento de código e deixar responsabilidades a classes filhas
+- Exemplo de um método abstrato
+
+```java
+public abstract void metodoAcao() {}
+```
+
+## Polimorfismo
+
+- É um dos pilares da orientação a objetos
+- Permite a referêcia da classe mãe e comportamentos da classe filha
+- Trata vários tipos de maneira homogênea
+- Significa muitas formas
+- Deixa o código mais coeso e fácil manutenção
+- Exemplo de polimorfismo
+
+```java
+Pessoa aluno = new Aluno();
+```
+
+- Nesse exemplo temos um aluno que é uma pessoa sendo instanciado como Aluno
+- Usa os métodos de pessoa mas a implmentação fica para classe Aluno
+
+## Interfaces
+
+- É uma das formas de obrigar a implementação de métodos em classes que a implementam
+- Funciona como um contrato para a classe
+- Muito utilizado em Api's e frameworks
+- As interfaces exige somente assinatura de métodos abstratos
+- A diferença entre classes abstratas e interfaces é que as classes possui atributos que podem ser compartilhados entre as classes filhas e a interface exige somente abstração dos métodos
+- Exemplo da criação de uma interface
+
+```java
+public interface FiguraGeometrica {
+ public String getNomeFigura();
+ public int getArea();
+ public int getPerimetro();
+}
+```
+
+- Classe que implementa a interface
+
+```java
+public class Quadrado implements FiguraGeometrica {
+
+    private int lado;
+
+    public int getLado() {
+        return lado;
+    }
+
+    public void setLado(int lado) {
+        this.lado = lado;
+    }
+
+    @Override
+    public int getArea() {
+        int area = 0;
+        area = lado * lado;
+
+        return area;
+    }
+
+    @Override
+    public int getPerimetro() {
+        int perimetro = 0;
+
+        perimetro = lado * 4;
+        return perimetro;
+    }
+
+    @Override
+    public String getNomeFigura() {
+        return "quadrado";
+    }
+}
+```
