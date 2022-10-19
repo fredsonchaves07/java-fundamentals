@@ -50,36 +50,6 @@
   meuCarro.proprietario.nome = "Ana"
 ```
 
-## Construtores
-
-- Inicializa os valores dos atributos do objeto
-- Responsável pela construção do objeto
-- Realiza a construção de um objeto vazio (sem valores). Exemplo utilizando um construtor padrão
-
-```java
-    public Aluno() {
-    
-    }
-    
-    Aluno aluno = new Aluno();
-```
-
-- O construtor inicializa os valores dos atributos com base nos parâmetros
-
-```java
-    public Aluno(String nome, int idade, String dataNascimento, String registroGeral, String numeroCPF) {
-        this.nome = nome;
-        this.idade = idade;
-        this.dataNascimento = dataNascimento;
-        this.registroGeral = registroGeral;
-        this.numeroCPF = numeroCPF;
-    }
-
-    Aluno alunoMaria = new Aluno("Maria", 22, "10/01/2002", "0210214", "0145503");
-```
-
-- A palavra `this` chama o atributo (O que diferencia a variavel da classe com o parâmetro do construtor)
-
 ## Declarações públicas e privadas
 
 - Um dos princípios da orientação objetos é o **encapsulamento** que consiste em deixar os atibutos de forma privada evitando acessos desnecessários em classes que utilizam
