@@ -46,7 +46,7 @@
     
 ```
 
-## Modificador final em variáveis de instância
+## Modificador `final` em variáveis de instância
 
 - O modificador final é utilizado para definir um valor obrigatório na variável
 - O valor pode ser inicializado no construtor ou na classe
@@ -55,3 +55,12 @@
 ```java
   final String codigo = "1ac60";
 ```
+
+## Modificador `default`
+
+- Pode ser usado em classes, construtores de métodos
+- É acessível e vísivel para todas as classes de mesmo pacote
+
+## Modificador `public`
+
+- Torna-se vísivel e acessível em qualquer pacote
