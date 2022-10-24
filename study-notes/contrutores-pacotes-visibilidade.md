@@ -64,3 +64,8 @@
 ## Modificador `public`
 
 - Torna-se vísivel e acessível em qualquer pacote
+
+## Modificador `private`
+
+- Torna o membro privado impossibilitando acesso a outras classes e pacotes
+- É útil quando não queremos tornar o acesso público do atibuto ou método
