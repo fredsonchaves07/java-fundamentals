@@ -27,3 +27,22 @@ public record Product(String name, Integer price) {
     }
 }
 ```
+
+## Sealed Classes
+
+- Define uma forma de extensão de uma classe ou interface
+- Mais controle sobre quais classes podem estender sua classe
+- Pode ser um recurso útil no desenvolvimento de bibliotecas e frameworks
+
+```java
+public sealed class Shape permits Rectangle, Circle {
+
+}
+
+sealed class Rectangle extends Shape {}
+
+non-sealed class Circle extends Shape {}
+
+final class Square extends Rectangle{}
+
+```
