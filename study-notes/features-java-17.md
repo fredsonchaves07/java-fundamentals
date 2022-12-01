@@ -46,3 +46,64 @@ non-sealed class Circle extends Shape {}
 final class Square extends Rectangle{}
 
 ```
+
+## Pattern Matching para switch
+
+- É um recurso de pré-visualização. Provavelmente será implementado como versão final na próxima versão LTS
+- O pattern matching evita a utilização de longos blocos if-else
+- É uma declaração switch com melhor sintaxe e funcionalidade
+- Sem o pattern matching
+
+```java
+    public static void main(String[] args) {
+        DayOfWeek dayOfWeek = DayOfWeek.MONDAY; // Assign here the value
+        switch (dayOfWeek) {
+            case SUNDAY:
+            case SATURDAY:
+                System.out.println("Weekend");
+                break;
+            case FRIDAY:
+            case THURSDAY:
+            case WEDNESDAY:
+            case TUESDAY:
+            case MONDAY:
+                System.out.println("Weekday");
+                break;
+            default:
+                System.out.println("Unknown Day!");
+        }
+    }
+```
+
+- Com o pattern matching
+
+```java
+    public static void main(String[] args) {
+        DayOfWeek day = DayOfWeek.MONDAY; // Assign here the value
+        System.out.println(switch (day) {
+            case SUNDAY, SATURDAY -> "Weekend";
+            case FRIDAY, THURSDAY, WEDNESDAY, TUESDAY, MONDAY -> "Weekday";
+        });
+    }
+```
+
+## Text block
+
+- Facilita a leitura de textos grandes
+- Geralmente utilizados em consultas SQL
+- Melhora manutenção futuramente desse tipo de estrutura
+
+```java
+    public static void main(String[] args) {
+        String query = """
+                    SELECT 
+                        products.id,
+                        products.name,
+                        products.category
+                    FROM products
+                    WHERE products.id = 1
+                    ORDER BY products.name;
+                """;
+        System.out.println(query);
+    }
+```
