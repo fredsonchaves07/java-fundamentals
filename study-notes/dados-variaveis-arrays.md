@@ -103,3 +103,36 @@ float higtemp;
 - Util quando queremos ter mais precisão de um valor
 - Pode ser mais rápida em alguns processadores modernos que é otimizado para realizar calculos matemáticos como `sin()`, `cos()` e `sqrt()` 
 
+## Caracteres
+
+- Em Java um tipo específico para armazenar caracters é o tipo `char`
+- O intervalo de um `char` é de 0 até 65,535
+- Não existe valores negativos para o tipo `char`
+
+## Booleanos
+
+- O `boolean` é o tipo primitivo em Java para identificar valores verdadeiro e falso
+- É usado em estruturas de decisão `if` e controles `for`
+
+## Variáveis
+
+- É a unidade básica de armazenamento de informação
+- Define uma combinação de tipo e valor
+- Para declara uma variável:
+
+```shell
+type identifies = value;
+```
+- Alguns dos exemplos de como podemos declarar as variáveis
+
+![Captura de tela de 2023-01-27 14-53-58](https://user-images.githubusercontent.com/43495376/215159348-60b68bba-3811-486b-8e1c-caebb16031f5.png)
+
+### Inicialização dinâmica
+
+- Java permite que as variáveis sejam inicializadas dinamicamente usando alguma expressão válida no momento que a variável é declarada
+
+```java
+double a = 3.0, b = 4.0
+// c is dynamically initialized
+double c = Math.sqrt(a * a + b * b)
+```
