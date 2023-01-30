@@ -136,3 +136,15 @@ double a = 3.0, b = 4.0
 // c is dynamically initialized
 double c = Math.sqrt(a * a + b * b)
 ```
+
+## Arrays
+
+- É um tipo de dado dinâmico onde é possível armazenar várias informações em apenas 1 variável
+- Um array é declarado seguinte estrutura
+
+```shell
+type[] name = new type[size];
+```
+
+- o size especifica a quantidade de elementos que a variável deve suportar
+
