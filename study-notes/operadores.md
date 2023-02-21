@@ -18,3 +18,7 @@
 - Alguns dos operadores bit a bits
 
 ![Captura de tela de 2023-02-20 09-34-02](https://user-images.githubusercontent.com/43495376/220109322-e4b08fda-a099-4d4f-b0e8-a3399b920bbc.png)
+
+## Operadores relacionais
+
+- São utilizados para definir algum critério de validação. Muito usado também em laços condicionais
