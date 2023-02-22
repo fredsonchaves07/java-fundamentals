@@ -22,3 +22,23 @@
 ## Operadores relacionais
 
 - São utilizados para definir algum critério de validação. Muito usado também em laços condicionais
+
+## Operadores lógicos e booleanos
+
+- É uma combinação de 2 valores que resultam em um valor booleano (Verdadeiro ou False)
+- Pode ser utilizado também em laços condicionais
+
+![Captura de tela de 2023-02-22 14-36-27](https://user-images.githubusercontent.com/43495376/220710130-debefc3e-05ec-4016-96c7-52474b3b6c1a.png)
+![Captura de tela de 2023-02-22 14-37-55](https://user-images.githubusercontent.com/43495376/220710206-9f351d20-cb5d-4020-9e84-00f4500333e1.png)
+
+
+## Operador `?`
+
+- Utilizado em condicionais ternárias
+
+```java
+expression1 ? expression2:expression3
+```
+
+- A expressão 3 é executado caso a expressao 1 seja verdadeira, caso contrário, a expressão 3 é executada
+- O seu uso excessivo pode tornar o código ilegível
