@@ -59,3 +59,43 @@ switch (expression) {
   // statement sequence
  }
 ```
+
+## Instruções de interação
+
+- As instruções de interação são conhecidas como laços de repetições `for`, `while` e `do-while` que formam estruturas de loops
+
+### `while` 
+
+- São estruturas 'enquanto'. Executa um loop por determinada condição
+
+```java
+while (condition) {
+  // body of loop
+}
+```
+- A condiçção pode der qualquer expressão booleana
+- O corpo do executado do loop é executado quando a condição é true
+- Este tipo de estrutura é útil quando não sabemos ao certo quando deve-se parar
+
+### `do-while`
+
+- São estruturas que executam o corpo de instrução antes de realizar a validação. Ao menos é executado 1 vez
+- Representa a estrutura 'faça'
+
+```java
+do {
+  // body of loop
+} while (condition);
+```
+
+### `for` 
+
+- É um tipo de esturutra de repetição que é possível inserir uma inicialização existentes e muito usado para iteraçoees
+- Representa a estrutura 'para'
+
+
+```java
+for ( inicialization; condition; opcional) {
+  // body of loop
+}
+```
