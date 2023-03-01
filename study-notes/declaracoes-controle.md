@@ -99,3 +99,11 @@ for ( inicialization; condition; opcional) {
   // body of loop
 }
 ```
+
+### `for-each` 
+
+- Semelhante ao `for`. Uma versão alternativa mais limpa e fácil de entender
+
+```java
+for(type itr-var : collection) statement-block
+```
