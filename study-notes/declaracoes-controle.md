@@ -107,3 +107,25 @@ for ( inicialization; condition; opcional) {
 ```java
 for(type itr-var : collection) statement-block
 ```
+
+## Instruções de salto
+
+- São comandos utilizados para alterar o fluxo de um controle
+- São conhecidos como `break`, `continue` e `return`
+
+### `break`
+
+- Geralmente é utilizado em estruturas de interação
+- Serve para para um bloco de execução
+- Pode ser uma alternativa para evitar loops
+
+### `continue` 
+
+- Também é usado para parar um bloco de interação porém chama a próxima sequência
+- Geralmente é utilizado em instruções `for`
+- Serve para continuar o fluxo na próxima interação
+
+### `return` 
+
+- Retorna um valor de um bloco de instrução
+- Geralmente utilizado em estruturas `ifs` e também em métodos
