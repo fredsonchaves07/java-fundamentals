@@ -45,3 +45,36 @@ public static void main(String[] args) {
     System.out.println(date);
 }
 ```
+
+## `LocalTime`
+
+- Representa apenas a informação do tempo (horário) sem data ou timezone
+- É usado quando queremos apenas a informação do horário
+
+```java
+public static void main(String[] args) {
+    LocalTime horario = LocalTime.now();
+    System.out.println(horario);
+}
+```
+
+## `LocalDateTime`
+
+- Representa a data e o horário sem a informação de timezone
+- Combinação das classes `LocalDate` e `LocalTime`
+- É usado quando queremos ter a informação de data e hora sem timezone
+
+```java
+public static void main(String[] args) {
+    LocalDateTime dataHora = LocalDateTime.now();
+    System.out.println(dataHora);
+}
+```
+
+## Outras formas de  obter instâncias de `LocalDate`, `LocalTime` e `LocalDateTime`
+
+```java
+LocalDate data = LocalDate.of(1995, 1, 29);
+LocalTime hora = LocalTime.of(10, 6, 3);
+LocalDateTime dataHora = LocalDateTime.of(data, hora);
+```
