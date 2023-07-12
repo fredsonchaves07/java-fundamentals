@@ -16,5 +16,10 @@
 
 ### 2) Cogite o uso de um builder quando se deparar com muitos parâmetros no construtor
 
-- Para resolver esta questão, tradicionalmente, os programadores têm usado o padrão `telescoping constructor`, no qual você fornece um construtor somente com os parâmetros necessários, outro com um único parâmetro opcional, um terceiro com dois e assim sucessivamente
+- Para resolver esta questão, tradicionalmente, os programadores têm usado o padrão `telescoping constructor`, no qual você fornece um construtor somente com os parâmetros necessários, outro com um único parâmetro opcional, um terceiro com dois e assim sucessivamente. O padrão telescoping constructor funciona, mas é difícil escrever código do cliente quando se tem muitos parâmetros, e é ainda mais difícil de ler.
 - Uma alternativa eficiente seria utilizar o padrão `Builder`. Em vez de construir diretamente o objeto pretendido, o cliente chama um construtor (ou uma static factory) com todos os parâmetros necessários e obtém um objeto builder, Em seguida, o cliente chama o método do tipo setter no objeto builder para definir cada parâmetro opcional de interesse. Por fim, o cliente chama um método builder sem parâmetros para gerar o objeto, nomalmente imultavel. Em geral, o builder é um membro de classe estática
+- O padrão Builder simula os parâmetros opcionais nomeados como os que encontramos nas linguagens Python e Scala.
+- O padrão Builder também apresenta desvantagens. Para criar um objeto, você deve primeiro criar um builder. Embora seja pouco provável que o custo de criação desse builder seja considerável na prática, isso pode ser um problema em situações críticas de desempenho. Além disso, o padrão Builder é mais verboso do que o padrão do telescoping constructor, logo, ele deve ser usado apenas se houver parâmetros suficientes que justifiquem seu uso, digamos que quatro parâmetros ou mais.
+- Em síntese, o padrão Builder é uma boa opção ao projetar classes cujos construtoresou static factories tenham mais do que uns poucos parâmetros.
+
+### 3) Implemente a propriedde de um singleton
