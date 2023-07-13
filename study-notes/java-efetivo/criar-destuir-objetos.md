@@ -37,3 +37,34 @@
 - Um padrão simples para atender esse requisito é passar o recurso no construtor ao criar uma instância nova, 
 - A injeção de dependência é igualmente aplicável aos construtores, static factories e aos builders
 - Em suma, não utilize um singleton ou mais classe utilitária estática para implementar uma classe que depende de um ou mais recursos subjacentes cujo comportamento afete o da classe. Em vez disso, passe os recursos ou as fábricas para o construtor (ou static factory ou builder) para criar-los.
+
+## 6) Evite a criação de objetos desnecessários
+
+- A criação de objetos desnecessários podem prejudicar a perfomance da aplicação
+- Muitas vezes, podemos evitar a criação de objetos desnecessários usando os métodos static factory em lugar dos construtores em classes imutáveis que fornecem ambos.
+- Dê preferencia aos tipos primitivos do que aos tipos primitivos empacotados, e tome cuidado com o autoboxing involutário
+
+## 7) Elimine referências obsoletas de objetos
+
+- Uma referência absoleta é simplesmente uma referência que nunca mais será desreferenciada outra vez
+- Podemos eliminar as referências obsoletas atribuindo `null` aos objetos
+- Sempre que uma classe administra a própria memória, o programador deve ficar atento com os vazamentos de memória. Sempre que um elemento é liberado, qualquer referência de objeto contida no elemento deve ser anulada
+- Outra fonte comum de vazamentos de memória são os caches. Nessas circunstancias, o cache deve ser limpo, de tempos em tempos, e as entradas que não são mais usadas devem ser eliminadas
+- Uma terceira fonte comum de vazamentos de memória são os listeners e outras funções de callback
+- Em razão de os vazamentos de memória normalmente não se manifestarem como falhas evidentes, podem permanecer em um sistema por anos. Na maior parte dos casos, eles só são identificados devido ao resultado de uma inspeção detalhada do código ou com a ajuda de uma ferramenta de depuração conhecida como `heap profiler`. Sendo assim, é melhor aprender a antecipar problemas como esses antes que ocorram, a fim de prevenir que aconteçam
+
+## 8) Evite o uso dos finalizadores e dos cleaners
+
+- Os finalizadores são imprevisíveis, perigosíssimos e quase sempre desnecessários. Seu uso pode causar comportamento instável, desempenho insatisfatório e problemas de portabilidade.
+- A partir do java 9, os finalizadores ficaram obsoletos, porém ainda estão sendo utilizados pelas bibliotecas Java. O Java 9 substituiu os finalizadores pelos cleaners
+- Os cleaners são menos perigosos do que os finalizadores, mas ainda são imprevisíveis, lentos e geramente desnecessários
+- O ponto fraco dos finalizadores e dos cleaners é que não há garantia de que serão executados pontualmente.
+- Pode levar um tempo arbitrariamente longo entre o momento em que um objeto se torna inacessível e aquele em que o finalizador ou cleaner é executado. Isso significa que você nunca deve fazer nada com um finalizador ou cleaner que dependa criticamente do tempo
+- Por exemplo, depender de um finalizador ou cleaner para fechar os arquivos é um erro grave, pois os descritores de arquivos abertos sõ um recurso limitado
+- Para evitar o uso de um finalizador ou cleaner, podemos implementar nas classes o `AutoCloseable` exijindo dos clientes a invocação do método `close` em cada instância quando ela não form mais necessária, normalmente usando o `try-with-resources` para garantir o encerramento, mesmo diante de exceções
+
+## 9) Prefira o uso do `try-with-resources` ao `try-finally`
+
+- Historiacamente, uma instrução `try-finally` era a melhor maneira de garantir que um recurso fosse fechado corretamente, mesmo em casos de exceção ou retorno. Pode ser útil quando se temos apenas um recurso, porém pode se tornar inelegivel além de prejudicar a perfomance quando temos mais de um recurso
+- As versões do `try-with-resources` não são apenas mais curtas e mais legíveis que as originais, como também fornecem diagnósticos bem melhores.
+- A lição é clara: use sempre o `try-with-resources` em vez do `try-finally` ao trabalhar com recursos que devem ser fechados. O código resultante é mais curto e compreensível, e as exceções que ele gera são mais úteis. A instrução `try-with-resources`facilita a escrita correta do código usando recursos que devem ser fechados, o que era praticamente impossível com o `try-finally`
