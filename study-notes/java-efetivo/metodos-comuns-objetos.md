@@ -20,3 +20,25 @@
 8. Faça testes do `equals` se necessário, para verificar o comportamento padrão
 9. Não sobrescreve o método, a menos que precise: Em mutos casos, a implementação herdada da Object já traz o resultado satisfatório
 
+## Item 11: Sobrescreva sempre o método `hashCode` ao sobrescrever o método `equals`
+
+- Se não conseguir o fazer, sua classe violará o contrato geral para o `hashCode`, o que impedirá que ele funcione adequadamente nas coleções, como o `HashMap` e `HashSet`
+- Ao não sobrescrever o `hashCode`, você viola a segunda regra fundamental: os objetos iguais devem ter hash codes iguais
+- Quando você terminar de escrever o método, pergunte-se se as instâncias iguais apresentam hash codes iguais. Desenvolva testes unitários pra comprovar sua intuição (a menos que você use AutoValue para gerar seus métodos equals e os métodos hashCode, situação em que você pode seguramente deixar de fazer esses testes)
+- Você deve excluir todos os campos que não são usados nas comparações do `equals`, ou correr o risco de violar a segunda regra do contrato `hashCode`
+
+## Item 12: Sobrescreva sempre o `toString`
+
+- Sobrescreva sempre este método, tornando a mais concisa, mais informativa e que seja legível para uma pessoa
+- Fornecer uma boa implementação do método faz com que a classe seja mais agradável de se usar e com que os sistemas que a usam fiquem mais fáceis de depurar
+- Quando viável, o método deve retornar todas as informações contidas no objeto
+- Não faz sentido escrever o metodo em uma classe utilitária estática. Você também não deve escrever o método para maioria dos tipos enums
+
+## Item 13: Sobrescreva o `clone` de modo sensato
+
+- Espera-se que uma classe ao implementar o `Cloneable` forneça um método `clone` público que funcione corretamente
+- Assegure-se que o método não prejudique o objeto original e que implemente adequadamente as invariantes no clone
+- A arquitetura da `Cloneable` é incopatível como uso normal dos campos finais que referenciam os objetos mutáveis
+- Uma alternativa será fornecer um construtor de cópia ou fábrica de cópia.
+- A estratégia do construtor de cópia e sua variante static factory apresentam muitas vantagens em relação a Cloneable/clone: não dependem de um mecanismo decriação de objetos extralinguístico sescetível a risco; não exigem adesão a regras pouco documentadas que não tem como ser impostas; não entram em conflito com o uso apropriado dos campos finais; não lançam exceções verificadas desnecessárias e não precisam de cast
+- Via de regra, a funcionalidade de cópia é melhor atendida pelos construtores ou fábricas. Uma exceção digna de nota que foge essa regra são os arrays que são melhores copiados com o método `clone`
