@@ -42,3 +42,9 @@
 - Uma alternativa será fornecer um construtor de cópia ou fábrica de cópia.
 - A estratégia do construtor de cópia e sua variante static factory apresentam muitas vantagens em relação a Cloneable/clone: não dependem de um mecanismo decriação de objetos extralinguístico sescetível a risco; não exigem adesão a regras pouco documentadas que não tem como ser impostas; não entram em conflito com o uso apropriado dos campos finais; não lançam exceções verificadas desnecessárias e não precisam de cast
 - Via de regra, a funcionalidade de cópia é melhor atendida pelos construtores ou fábricas. Uma exceção digna de nota que foge essa regra são os arrays que são melhores copiados com o método `clone`
+
+## Item 14: Pense na possibilidade de implementar a `Comparable`
+
+- Ao implementar esta classe, você permite que sua classe funcione em conjunto com todos os algoritmos genéricos, que são muitos, e com as implementações de coleção que dependem dessa interface
+- Você ganha uma capacidde tremenda em troca de um esforço comum
+- As classes que dependem da comparação incluem as coleções ordenadas `TreeSet` e `TreeMap`, as classes utilitárias `Collections` e `Arrays`, que possuem algoritmos de pesquisa e ordenação
