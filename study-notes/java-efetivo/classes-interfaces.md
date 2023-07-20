@@ -23,3 +23,29 @@
 3) **Faça com que todos os campos sejam finais**
 4) **Faça com que todos os campos sejam privados**
 5) **Garanta o acesso exclusivo a quaisquer componentes mutáveis**: Nunca inicialize esse campo em uma referência de objeto fornecida pelo cliente ou retorne esse campo de um getter. Faça copias defensivas em construtores, getters e métodos `readObject`
+
+## Item 18: Prefira a composição à herança
+
+- Ao contrário da invocação do método, a herança viola o encapsulamento
+- Existe um modo de evitar esses problemas. Em vez de estender uma classe existente, dê à sua classe nova um campo privado, que referencie a instância de uma classe existente.
+- Esse design é chamado de composição porque a classe existente se torna um componente da nova classe
+- A herança é indicada somente em circunstâncias em que a subclasse realmente é um subtipo da superclasse. Em outras palavras, uma classe B deve estender uma classe A apenas se existir uma relação "É um" entre as duas classes
+
+## Item 19: Projete e documente as classes para a herança ou a iniba
+
+- A classe deve documentar a autoutilização de métodos possíveis de serem sobrescritos
+- Para cada método publico ou protegido, a documentação deve indicar quais aqueles passsíveis de serem sobrescritos que o método invoca, em que sequência e como os resultados de cada invocação influenciam o próximo processamento
+- Se a classe vai ser herdada por herança, crie subclasses para testar a superclasse antes de liberar
+- Projetar uma classe para herança exige muito esforço e impõe limitações substanciais à classe
+- A melhor solução para resolver esse problema é inibir a criação de subclasse tornando a classe imutavel
+
+## Item 20: Prefira as interfaces em vez de classes abstratas
+
+- As interfaces promovem aprimoramentos seguros e robustos de funcionaldades 
+- Podemos combinar as vantagens das interfaces e das classes abstratas, fornecendo uma implementação esquelética, método default da interface ou classe abstrata separada
+
+## Item 21: Projete as interface para a posteriodade
+
+- Os métodos padrões das bibliotecas Java são implementações de uso geral de altíssima qualidade e, na maioria dos casos, funcionaem bem. Mas nem sempre é possível escrever um método padrão que mantenha todas as invariantes de todas as possíveis implementações
+- Deve-se evitar o uso dos métodos padrões para adicionar métodos novoss às interfaces existentes, a menos que seja crucial, caso em que você deve pensar muito bem se uma implementação já existente dessa interface pode ser quebrada por sua implementação do método padrão
+- No entando, os métodos padrões são extremamente úteis para fornecer implementações padrão de métodos quando uma interface é criada e facilita a tarefa de implementar a interface
