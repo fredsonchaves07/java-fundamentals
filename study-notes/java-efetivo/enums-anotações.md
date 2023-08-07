@@ -25,9 +25,25 @@
 
 - Raramente é adequado utilizar os ordinais para indexar os arrays: Em vez disso, use a `EnumMap`
 
-## item 38: Emule enums extensíveis por meio de interfaces
+## Item 38: Emule enums extensíveis por meio de interfaces
 
 - Na maioria das vezes, a extensibilidade de enums acaba sendo uma péssima ideia. É um tanto confuso que os elementos de um tipo estendido sejam instâncias do tipo base e não vice-versa
 - Existe pelo menos uma situação em que vale a pena utilizar os tipos enumerados extensíveis, nos código de operação, também conhecidos como opcodes. Um opcode é um tipo enumerado cujos elementos representam operações em alguma máquina, como o tipo `Operation`
 - Existe uma forma simpática de se fazer isso utilizando os tipos enums. Trata-se de aproveitar o fato de que os tipos enum implementam interfaces
 - Embora você não possa escrever um tipo enum extensível, consegue emulá-lo ao escrever uma interface para acompanhar um tipo enum base que, por sua vez, implementa a interface
+
+## Item 39: Prefira as anotações aos padrões de nomenclatura
+
+- Se escrever uma ferramenta que exiga que os programadores adicionem informações ao código fonte, defina tipos de anotações apropriados. Simplesmente não há nenhuma razão para você usar padrões de nomeclatura quando pode utilizar as anotações
+- Os programadores devem usar is tipos de anotações predefinidos que o java fornece
+
+## Item 40: Use a anotação `Override` com frequência
+
+- Essa anotação só pode ser usad nas declarações de método, e indica que a declaração de método anotada sobrescreve a declaração em um supertipo. Se utilizar constantemente essa anotação, ela o protegerá de uma grande classe de bugs nefastos
+- Há apensas uma pequena exceção a essa regra. Se estiver escrevendo uma classe que não esteja rotulada como abstrata e estiver convencido de que ela sobrescreve um método abstrato de sua superclasse, não se preocupe em colocar a anotação no método.
+
+## Item 41: Use as interfaces marcadoras para definir tipos
+
+- Uma interface marcadora não contém declarações de métodos, porém designa uma classe que implementa a interface como tendo alguma propriedade
+- As interfaces marcadoras definem um tipo que é implementado pelas instancias da classe marcada; já as anotações marcadoras, não
+- Se você não quer definir um tipo, não use uma interface. Se você quer de fato definir um tipo, use uma interface
