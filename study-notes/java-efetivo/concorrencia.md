@@ -17,3 +17,17 @@
 ## Item 80: Dê preferência aos executores, às tarefas e às streams em vez das threads
 
 - Você pode fazer muito mais coisas com um serviço executor. Por exemplo, esperar que uma determinada tarefa seja concluida, esperar que alguma ou todas as tarefas de uma coleção sejam concluidas, esperar a finalização do serviço executor, recuperar os resultados das tarefas um após outro, à medida que são concluidas, pode agendar tarefas pra executarem um horário específico ou periodicamente e assim por diante
+
+## Item 81: Prefira os utilitários de concorrênciaao `wait` e ao `notify`
+
+- Desde o java 5, a plataforma vem disponibilizando utilitários de concorrência de alto nível, que fazem tipos de coisas que você outrora tinha que codificar manualmente em cima do `wait` e do `notify`
+- Dada a dificuldade de usar o `wait` e `notify` corretamente, você deve usar os utilitários de concorrência de nível superior
+- Por exemplo, use a `ConcurrentHashMap` em vez da `Collections.synchronizedMap`. Substituir maps sincronizados por maps concorrentespode aumentar e muito o desempenho das aplicações concorrentes
+
+## Item 82: Documente a thread safety
+
+- A presença do modificador `synchronized` em uma declaração de método é um detalhe de implementação, não parte de sua API
+- Para possibilitar o uso concorrente seguro, uma classe deve documentar com clareza o nível de thread safety que suporta
+- Documentar uma classe condicionalmente thread-safe requer cuidado. Você deve indicar quais sequências de invocação exigem sincronização externa e qual bloqueio (ou, em casos raros, bloqueios) deve ser utilizado para executar essas sequências. Normalmente, é o bloqueio na própria instãncia, mas há exceções
+- Toda classe deve documentar claramente suas propriedades de thread safety com uma descrição de texto redigida com muito cuidado ou com uma notação de thready safety.
+- Classes condicionalmente thread-safe devem documentar quais sequências de invocação do método exigem uma sincronização externa e quais bloqueios devem ser adquiridos ao executar essas sequências
