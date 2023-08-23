@@ -30,4 +30,16 @@
 - Para possibilitar o uso concorrente seguro, uma classe deve documentar com clareza o nível de thread safety que suporta
 - Documentar uma classe condicionalmente thread-safe requer cuidado. Você deve indicar quais sequências de invocação exigem sincronização externa e qual bloqueio (ou, em casos raros, bloqueios) deve ser utilizado para executar essas sequências. Normalmente, é o bloqueio na própria instãncia, mas há exceções
 - Toda classe deve documentar claramente suas propriedades de thread safety com uma descrição de texto redigida com muito cuidado ou com uma notação de thready safety.
-- Classes condicionalmente thread-safe devem documentar quais sequências de invocação do método exigem uma sincronização externa e quais bloqueios devem ser adquiridos ao executar essas sequências
+- Classes condiciona++lmente thread-safe devem documentar quais sequências de invocação do método exigem uma sincronização externa e quais bloqueios devem ser adquiridos ao executar essas sequências
+
+## Item 83: Utilize a inicialização preguiçosa com parcimônia
+
+- A inicialização preguiçosa é o ato de atrasar a inicialização de um campo ate que seu valor seja necessário. Se o valor nunca for necessário, o campo nunca será inicializado
+- Essa técnica se aplica aos campos estáticos e aos de instância. Enquanto a inicialização preguiçosa é basicamente uma otimicação, também pode ser usada para romper as circularidades prejudiciais na inicialização de classes e instâncias
+
+## Item 84: Não dependa do agendador de threads
+
+- Quando muitas threads são executáveis, o agendador de threads determina quais devem ser executadas e por quanto tempo. Qualquer sistema operacional normal tentará fazer essa determinação de forma imparcial, mas a política pode variar
+- Programas bem escritos não devem depender dos detalhes dessa política
+- Não dependa do agendador de threads para a correção de seu programa. O programa resultante não será robusto nem portátil.
+- As propriedades da thread podem ser usadas com parcimônia para melhorar a qualidade do serviço de um programa já em funcionamento, mas nunca devem ser utilizadas para "corrigir" um programa que mal funciona
